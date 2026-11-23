@@ -1,0 +1,87 @@
+/* ==========================================================================
+   CampusParking - Pantalla de acceso
+   ========================================================================== */
+
+.pagina-acceso {
+    display: grid;
+    place-items: center;
+    padding: 24px 16px;
+    background:
+        radial-gradient(900px 500px at 10% -10%, rgba(0, 230, 138, 0.1), transparent 60%),
+        var(--fondo);
+}
+
+.acceso {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    width: min(920px, 100%);
+    overflow: hidden;
+    border: 1px solid var(--borde);
+    border-radius: 16px;
+    background: var(--superficie);
+    box-shadow: var(--sombra);
+}
+
+.acceso__marca {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 18px;
+    padding: 48px 40px;
+    border-right: 1px solid var(--borde-suave);
+    background: linear-gradient(160deg, var(--superficie-elevada), var(--superficie));
+}
+
+.acceso__marca h1 { font-size: 1.7rem; }
+.acceso__marca p { color: var(--texto-suave); }
+
+.acceso__beneficios {
+    display: grid;
+    gap: 10px;
+    padding: 0;
+    list-style: none;
+}
+
+.acceso__beneficios li {
+    position: relative;
+    padding-left: 22px;
+}
+
+.acceso__beneficios li::before {
+    content: '';
+    position: absolute;
+    top: 0.5em;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--acento);
+}
+
+.acceso__formulario {
+    display: grid;
+    align-content: center;
+    gap: 14px;
+    padding: 48px 40px;
+}
+
+.acceso__demo {
+    margin-top: 6px;
+    padding-top: 16px;
+    border-top: 1px solid var(--borde-suave);
+    font-size: 0.85rem;
+    color: var(--texto-suave);
+}
+
+@media (max-width: 760px) {
+    .acceso { grid-template-columns: 1fr; }
+
+    .acceso__marca {
+        padding: 28px 24px;
+        border-right: none;
+        border-bottom: 1px solid var(--borde-suave);
+    }
+
+    .acceso__beneficios { display: none; }
+    .acceso__formulario { padding: 28px 24px; }
+}
