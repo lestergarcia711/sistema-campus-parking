@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <title>Panel | CampusParking</title>
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/panel.css">
+</head>
+<body>
+    <div class="aplicacion">
+        <aside id="barra-lateral" class="barra-lateral">
+            <div class="logo"><img class="logo__imagen" src="assets/img/logo.png" alt="" width="36" height="36"><span class="logo__texto">CampusParking</span></div>
+
+            <nav aria-label="Navegación principal">
+                <ul id="menu-navegacion" class="menu"></ul>
+            </nav>
+
+            <div class="barra-lateral__pie">
+                <button type="button" id="boton-perfil" class="usuario" title="Mi perfil">
+                    <span id="inicial-usuario" class="usuario__avatar" aria-hidden="true"></span>
+                    <span class="usuario__datos">
+                        <span id="nombre-usuario" class="usuario__nombre"></span>
+                        <span class="usuario__rol">Mi perfil</span>
+                    </span>
+                </button>
+                <button type="button" id="boton-salir" class="boton boton--secundario boton--ancho">Cerrar sesión</button>
+            </div>
+        </aside>
+
+        <div class="area-principal">
+            <header class="barra-superior">
+                <button type="button" id="boton-menu" class="boton boton--secundario boton--icono" aria-label="Abrir menú">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                </button>
+                <img class="logo__imagen" src="assets/img/logo.png" alt="" width="36" height="36">
+                <span class="logo__texto">CampusParking</span>
+            </header>
+            <main id="contenido" class="contenido" tabindex="-1"></main>
+        </div>
+    </div>
+    <script type="module" src="assets/js/panel.js"></script>
+</body>
+</html>
