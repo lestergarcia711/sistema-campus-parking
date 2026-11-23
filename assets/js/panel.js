@@ -7,9 +7,11 @@ import { icono } from './iconos.js';
 import { leerRutaActual } from './navegacion.js';
 import { cerrarSesion, haySesionActiva } from './seguridad.js';
 import { escapar } from './ui.js';
+import * as configuracion from './vistas/configuracion.js';
 import * as historial from './vistas/historial.js';
 import * as ingreso from './vistas/ingreso.js';
 import * as parqueo from './vistas/parqueo.js';
+import { abrirPerfil } from './vistas/perfil.js';
 import * as recaudacion from './vistas/recaudacion.js';
 import * as resumen from './vistas/resumen.js';
 
@@ -19,6 +21,7 @@ const RUTAS = [
     { ruta: 'parqueo', etiqueta: 'En parqueo', icono: 'lista', vista: parqueo },
     { ruta: 'historial', etiqueta: 'Historial', icono: 'reloj', vista: historial },
     { ruta: 'recaudacion', etiqueta: 'Recaudación', icono: 'dinero', vista: recaudacion },
+    { ruta: 'configuracion', etiqueta: 'Configuración', icono: 'ajustes', vista: configuracion },
 ];
 const RUTA_INICIAL = 'resumen';
 
@@ -87,6 +90,7 @@ dibujarUsuario();
 
 window.addEventListener('hashchange', mostrarVista);
 botonMenu.addEventListener('click', () => barraLateral.classList.toggle('barra-lateral--abierta'));
+document.getElementById('boton-perfil').addEventListener('click', () => abrirPerfil(dibujarUsuario));
 document.getElementById('boton-salir').addEventListener('click', () => {
     cerrarSesion();
     location.replace('index.html');
